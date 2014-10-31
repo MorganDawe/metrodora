@@ -102,13 +102,11 @@
 }
 
 .field-name-field-collection-logo{
-  width: 48%;
-  float: left;
+  float: right;
 }
 
 .field-name-field-collection-logo div.field-items div.field-item >img{
   float: right;
-  margin-top: -1.5em;
   max-width: 350px;
   height: auto;
 }

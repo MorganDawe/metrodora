@@ -38,7 +38,7 @@
   ?>
 
   <?php if (isset($inst_link)): ?>
-    <a href="<?php print $inst_link; ?>"><?php print render($content['field_collection_logo']); ?></a>
+    <div><a href="<?php print $inst_link; ?>"><?php print render($content['field_collection_logo']); ?></a></div>
   <?php endif; ?>
 
   <?php if (!isset($inst_link)): ?>
