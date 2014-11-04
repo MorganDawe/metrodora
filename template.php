@@ -232,13 +232,13 @@ function metro_theme_preprocess_block(&$variables, $hook) {
  * content type and construct the return link used on that page. This link
  * is added into the variables array as 'return_link'.
  *
- * @param $variables
+ * @param array $variables
  *   An array of variables to pass to the theme template.
  */
 function metro_theme_preprocess_node(&$variables) {
   // Handle additional processing for the 'about_collection' content type.
-  if (isset($variables['node']) && $variables['node']->type ==="about_collection") {
-    $variables['theme_hook_suggestions'][] =  "node__" . $variables['node']->type;
+  if (isset($variables['node']) && $variables['node']->type === "about_collection") {
+    $variables['theme_hook_suggestions'][] = "node__" . $variables['node']->type;
     if (isset($variables['field_collection_pid']['und']['0']['value'])) {
       $pid = $variables['field_collection_pid']['und']['0']['value'];
       $variables['return_link'] = url("islandora/object/$pid");
@@ -258,7 +258,7 @@ function metro_theme_preprocess_node(&$variables) {
  * and has a relevent 'about_collection' content type
  * created with the same pid.
  *
- * @param $variables
+ * @param array $variables
  *   An array of variables to pass to the theme template.
  */
 function metro_theme_preprocess_page(&$variables) {
@@ -280,9 +280,6 @@ function metro_theme_preprocess_page(&$variables) {
  * Preform preprocessing to set the formatted link of the
  * related collections about collection page. Used in
  * 'Browse Collections' view.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
  */
 function metro_theme_preprocess_views_view_fields(&$vars) {
   $view = $vars['view'];
@@ -313,8 +310,8 @@ function metro_theme_preprocess_views_view_fields(&$vars) {
         $label = $view->result[$view->row_index]->{$vars['label_field']};
       }
       $formatted_label = "'" . $label . "'";
-      $vars['fields'][$vars['about_collection_link_field']]->content =
-        '<span class="field-content"><a href="'.$formatted_url.'">About '.$formatted_label.'</a></span>';
+      $vars['fields'][$vars['about_collection_link_field']]->content
+        = '<span class="field-content"><a href="' . $formatted_url . '">About ' . $formatted_label . '</a></span>';
     }
     else {
       // Empty this field if the about collection page does not exist.
@@ -333,7 +330,7 @@ function metro_theme_preprocess_views_view_fields(&$vars) {
  *   An array of results, returned from the EntityFieldQuery.
  */
 function metro_theme_find_about_page_by_pid($pid) {
-  $query = new EntityFieldQuery;
+  $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'about_collection')
     ->propertyCondition('status', 1)
@@ -342,6 +339,9 @@ function metro_theme_find_about_page_by_pid($pid) {
   return $results;
 }
 
+/**
+ * Implements hook_form_alter().
+ */
 function metro_theme_form_islandora_solr_simple_search_form_alter(&$form, &$form_state, $form_id) {
   $link = array(
     '#markup' => l(t("Advanced Search"), "advanced-search", array('attributes' => array('class' => array('adv_search')))),
@@ -349,6 +349,9 @@ function metro_theme_form_islandora_solr_simple_search_form_alter(&$form, &$form
   $form['simple']['advanced_link'] = $link;
 }
 
+/**
+ * Implements hook_preprocess_html().
+ */
 function metro_theme_preprocess_html(&$variables) {
   drupal_add_css('http://openfontlibrary.org/face/linear-regular', array('group' => CSS_THEME, 'preprocess' => FALSE));
   drupal_add_css('http://openfontlibrary.org/face/open-baskerville', array('group' => CSS_THEME, 'preprocess' => FALSE));
