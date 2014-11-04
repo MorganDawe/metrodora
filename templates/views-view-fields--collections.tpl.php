@@ -27,25 +27,25 @@
 
 <div class="browse-all-collections-item-wrapper">
   <div class="browse-all-collections-image-wrapper">
-  <?php print $fields['nothing']->content; ?>
+  <?php print $fields[$thumb_field]->content; ?>
   </div>
   <div class="browse-all-collections-content-wrapper">
     <div class="browse-all-collections-info-wrapper">
       <div class="browse-all-collections-info-wrapper-title-content">
-      <span id="browse-all-collections-info-wrapper-title-label"><?php print t($fields['fgs_label_s']->label); ?>: </span>
-      <?php print $fields['fgs_label_s']->content; ?>
+      <span id="browse-all-collections-info-wrapper-title-label"><?php print t($fields[$label_field]->label); ?>: </span>
+      <?php print $fields[$label_field]->content; ?>
       </div>
       <div class="browse-all-collections-info-description">
-      <?php print $fields['dc.description']->label_html; ?>
-      <?php print $fields['dc.description']->content; ?>
+      <?php print $fields[$description_field]->label_html; ?>
+      <?php print $fields[$description_field]->content; ?>
       </div>
     </div>
     <div class="browse-all-collections-links-wrapper">
       <div>
-      <?php print $fields['nothing_1']->content; ?>
+      <?php print $fields[$collection_link_field]->content; ?>
       </div>
       <div>
-      <?php print $fields['nothing_2']->content; ?>
+      <?php print $fields[$about_collection_link_field]->content; ?>
       </div>
     </div>
   </div>
