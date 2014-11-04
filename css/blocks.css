@@ -2,6 +2,26 @@
  * @file
  * Block Styling
  */
+ 
+#block-islandora-collection-search-islandora-collection-search{
+  clear: left;
+  float: left;
+  width: 78%;
+  margin: 1.3em;
+}
+#block-islandora-collection-search-islandora-collection-search h2{
+  border-bottom: none;
+  margin-bottom: 0;
+  padding: 0 0 0 0;
+  float: left;
+}
+#islandora-collection-search-form{
+  float: right;
+}
+.form-item-islandora-simple-search-query{
+  margin: 0 !important;
+}
+
 /* line 9, ../sass/blocks.scss */
 .block {
   /* Block wrapper */
