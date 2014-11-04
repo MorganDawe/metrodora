@@ -263,13 +263,8 @@ function metro_theme_preprocess_node(&$variables) {
  */
 function metro_theme_preprocess_page(&$variables) {
   $object = menu_get_object('islandora_object', 2);
-  if (isset($object) && in_array("islandora:collectionCModel", $object->models)) {
-    $query = new EntityFieldQuery;
-    $query->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', 'about_collection')
-      ->propertyCondition('status', 1)
-      ->fieldCondition('field_collection_pid', 'value', $object->id);
-    $results = $query->execute();
+  if (isset($object) && isset($object->models) && in_array("islandora:collectionCModel", $object->models)) {
+    $results = metro_theme_find_about_page_by_pid($object->id);
     if (isset($results['node'])) {
       $nodes = node_load_multiple(array_keys($results['node']));
       $node = reset($nodes);
@@ -277,6 +272,61 @@ function metro_theme_preprocess_page(&$variables) {
       $variables['about_collection_link'] = url("node/$node_id");
     }
   }
+}
+
+/**
+ * Implements hook_view_fields().
+ *
+ * Preform preprocessing to set the formatted link of the
+ * related collections about collection page. Used in
+ * 'Browse Collections' view.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ */
+function metro_theme_preprocess_views_view_fields(&$vars) {
+  $view = $vars['view'];
+  if ($view->name === 'collections') {
+    $pid = $view->result[$view->row_index]->PID;
+    $results = metro_theme_find_about_page_by_pid($pid);
+    // Construct the about collection page link, if it exists.
+    if (isset($results['node'])) {
+      $nodes = node_load_multiple(array_keys($results['node']));
+      $node = reset($nodes);
+      $node_id = $node->nid;
+      $formatted_url = url("node/$node_id");
+      // Default label, playing it safe.
+      $label = t("This Collection");
+      if (isset($view->result[$view->row_index]->fgs_label_s)) {
+        $label = $view->result[$view->row_index]->fgs_label_s;
+      }
+      $formatted_label = "'" . $label . "'";
+      $vars['fields']['nothing_2']->content = '<span class="field-content"><a href="'.$formatted_url.'">About '.$formatted_label.'</a></span>';
+    }
+    else {
+      // Empty this field if the about collection page does not exist.
+      $vars['fields']['nothing_2']->content = "";
+    }
+  }
+}
+
+/**
+ * Find the about collection node for a given pid.
+ *
+ * @param string $pid
+ *   The islandora object PID.
+ *
+ * @return array
+ *   An array of results, returned from the EntityFieldQuery.
+ */
+function metro_theme_find_about_page_by_pid($pid) {
+  $query = new EntityFieldQuery;
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'about_collection')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_collection_pid', 'value', $pid);
+  $results = $query->execute();
+  return $results;
 }
 
 function metro_theme_form_islandora_solr_simple_search_form_alter(&$form, &$form_state, $form_id) {
