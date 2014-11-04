@@ -50,9 +50,3 @@
     </div>
   </div>
 </div>
-
-<?php
-  print '<pre>';
-
- print '</pre>';
-?>
