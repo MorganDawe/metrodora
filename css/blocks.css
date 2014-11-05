@@ -2,24 +2,58 @@
  * @file
  * Block Styling
  */
- 
+
 #block-islandora-collection-search-islandora-collection-search{
   clear: left;
   float: left;
+  margin: 0.5em 1.3em;
   width: 78%;
-  margin: 1.3em;
 }
+
 #block-islandora-collection-search-islandora-collection-search h2{
   border-bottom: none;
   margin-bottom: 0;
-  padding: 0 0 0 0;
   float: left;
+  border-bottom:3px solid #99CCFF;
+  font-size: 99%;
+  padding: 0.2em 0 0;
+  margin-right: 1.5em;
 }
+
 #islandora-collection-search-form{
-  float: right;
+  float: left;
+  width: 83%;
 }
+
 .form-item-islandora-simple-search-query{
   margin: 0 !important;
+  width: 50%;
+}
+
+#edit-collection-select{
+  width: 40%;
+}
+
+#edit-submit{
+  border: 0.013em solid #807E7E;
+  border-radius: 5px;
+}
+
+#edit-islandora-simple-search-query{
+  border: 0.013em solid #807E7E;
+  border-radius: 5px;
+  width: 40%;
+}
+
+#block-menu-menu-login{
+  margin-bottom: 0;
+}
+
+#block-menu-menu-login ul li.leaf{
+  margin-bottom: 0;
+  margin-right: 1.5em;
+  list-style-type: none;
+  list-style-image: none;
 }
 
 /* line 9, ../sass/blocks.scss */

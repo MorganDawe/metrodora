@@ -6,6 +6,27 @@
  * miscellaneous Drupal elements that appear in the $content variable, such as
  * ul.links, .pager, .more-link, etc.
  */
+.sub-header-style{
+  background-color: #F2F2F2;
+  clear: left;
+  float: left;
+  height: auto;
+  left: 0;
+  width: 100%;
+}
+
+#header{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#block-menu-menu-login .menu{
+  margin-right: 1em;
+  line-height: 1.25em;
+  list-style: none outside none;
+  margin: 0.75em 0;
+  
+}
 
 .browse-all-collections-item-wrapper a:link{
   text-decoration:underline;
