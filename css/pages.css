@@ -15,7 +15,6 @@
   float: left;
   width: 100%;
   height: 100%;
-  display: flex;
   padding-top: 1.5em;
   padding-bottom: 1.6em;
 }
@@ -29,7 +28,6 @@
 .browse-all-collections-content-wrapper{
   width: 82%;
   float: left;
-  max-height: 8em;
 }
 
 .browse-all-collections-info-description{
