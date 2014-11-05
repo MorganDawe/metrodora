@@ -108,12 +108,10 @@
     <?php endif; ?>
 
     <?php print render($page['header']); ?>
-  <div id="sub_header" class="sub-header-style">
-  <?php print render($page['sub_header']); ?>
-  </div>
+    <div id="sub_header" class="sub-header-style">
+    <?php print render($page['sub_header']); ?>
+    </div>
   </header>
-
-
 
   <div id="main">
 
