@@ -159,6 +159,11 @@ designkit[color][background][description] = "Background color."
 designkit[color][background][default] = "#ffffff"
 
 ; Header color
+designkit[color][sub_header][title] = "Sub Header color"
+designkit[color][sub_header][description] = "Sub Header color."
+designkit[color][sub_header][default] = "#ffffff"
+
+; Header color
 designkit[color][header][title] = "Header color"
 designkit[color][header][description] = "Header color."
 designkit[color][header][default] = "#ffffff"
