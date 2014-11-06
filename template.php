@@ -242,6 +242,14 @@ function metro_theme_preprocess_node(&$variables) {
     if (isset($variables['field_collection_pid']['und']['0']['value'])) {
       $pid = $variables['field_collection_pid']['und']['0']['value'];
       $variables['return_link'] = url("islandora/object/$pid");
+      drupal_add_js(
+        array(
+          'metrotheme' => array(
+            'search_in_pid' => $pid
+          )
+        ),
+      'setting'
+      );
     }
     if (isset($variables['field_institutions_website']['und']['0']['value'])) {
       $variables['inst_link'] = $variables['field_institutions_website']['und']['0']['value'];
