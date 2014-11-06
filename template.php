@@ -245,8 +245,8 @@ function metro_theme_preprocess_node(&$variables) {
       drupal_add_js(
         array(
           'metrotheme' => array(
-            'search_in_pid' => $pid
-          )
+            'search_in_pid' => $pid,
+          ),
         ),
       'setting'
       );
