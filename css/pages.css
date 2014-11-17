@@ -20,12 +20,23 @@
   padding-right: 0px;
 }
 
+#print_btn{
+  display:none;
+}
+
+ul li a.img{
+  display:none;
+}
 #block-menu-menu-login .menu{
   margin-right: 1em;
   line-height: 1.25em;
   list-style: none outside none;
   margin: 0.75em 0;
   
+}
+
+.galleria-container{
+  margin: auto;
 }
 /* #sub_header { */
 /*   background-color: #222222 !important; */

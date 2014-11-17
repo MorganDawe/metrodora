@@ -21,6 +21,9 @@ $(window).load(function() {
 	  $("#edit-islandora-simple-search-query").focus(function() {
       $(this).val("");
 	  });
+	 
+	 
+	 $("#print_btn").parent().parent().hide();
    
 });
 

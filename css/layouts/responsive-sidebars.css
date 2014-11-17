@@ -262,6 +262,27 @@
   }
 }
 @media all and (min-width: 320px) and (max-width: 639px) {
+  #edit-simple {
+    text-align: center;
+  }
+  #block-islandora-collection-search-islandora-collection-search h2{
+    float: none !important;
+    border-bottom-style: none !important;
+/*     width: 90px; */
+  }
+  #block-islandora-collection-search-islandora-collection-search {
+    text-align: center;
+    margin-left: 0.7em !important;
+  }
+  
+  #footer .footer-navigation .menu li {
+    display: table !important;
+    text-align: left !important;
+  }
+  
+}
+
+@media all and (min-width: 320px) and (max-width: 639px) {
   /* line 249, ../../sass/layouts/responsive-sidebars.scss */
   #block-views-frontpage-solr-boxes-block-1 {
     margin-bottom: 1em !important;
