@@ -12,19 +12,24 @@
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 (function ($, Drupal, window, document, undefined) {
 
-
-// Place your code here.
-
-$(window).load(function() {
-	$("#edit-islandora-simple-search-query").val("Search this repository");
-
-	  $("#edit-islandora-simple-search-query").focus(function() {
-      $(this).val("");
-	  });
-	 
-	 
-	 $("#print_btn").parent().parent().hide();
-   
-});
+$(window).load(
+  function() {
+    $("#edit-islandora-simple-search-query").val("Search this repository");
+    $("#edit-islandora-simple-search-query").focus(function() {
+      $(this).val("");
+    });
+    // Set the 'SEARCH IN' combo box from islandora collection search
+    // when viewing an 'about_collection' page to the correct default value.
+    if (Drupal.settings.metrotheme) {
+      // Multiple check on object/property, because javascript.
+      if (Drupal.settings.metrotheme.search_in_pid) {
+        // The metrotheme.search_in_pid is set in the metro-theme/template.php
+        // in the 'metro_theme_preprocess_node()' function.
+        $('#edit-collection-select').val(Drupal.settings.metrotheme.search_in_pid);
+      }
+    }
+    $("#print_btn").parent().parent().hide();
+  }
+);
 
 })(jQuery, Drupal, this, this.document);

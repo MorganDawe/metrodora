@@ -3,17 +3,10 @@
  * Block Styling
  * http://www.maxdesign.com.au/articles/css3-media-queries/media-sample/
  */
-/* .underline{ */
-/*     color: blue; */
-/*     border-bottom:1px solid #99CCFF; */
-/* } */ 
 
 #block-islandora-collection-search-islandora-collection-search{
-/*   clear: left; */
-/*   float: left; */
   margin-bottom: 0.5;
   margin-left: 1.3em;
-/*   margin-top: 0.5em; */
   width: auto;
 }
 
@@ -55,7 +48,6 @@
 }
 
 #block-menu-menu-login{
-/*   margin-bottom: 0; */
   width: auto;
 }
 
