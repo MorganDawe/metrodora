@@ -329,37 +329,6 @@ function metro_theme_preprocess_views_view_fields(&$vars) {
 }
 
 /**
- * Implements theme_menu_link().
- *
- * Allows for images as menu items.
- */
-function metro_theme_menu_link($variables) {
-  $element = &$variables['element'];
-
-  $pattern = '/\S+\.(png|gif|jpg)\b/i';
-  if (preg_match($pattern, $element['#title'], $matches) > 0) {
-    $element['#title'] = preg_replace(
-      $pattern,
-      '<img alt = "' . $element['#localized_options']['attributes']['title'] . '" src = "' . url($matches[0]) . '" />',
-      $element['#title']
-    );
-    $element['#localized_options']['html'] = TRUE;
-  }
-  $pattern = '/^Logo_metro_footer/i';
-  if (preg_match($pattern, $element['#title'], $matches) > 0) {
-    $footer_logo_path = "sites/all/themes/metro-theme/images/icon/logo_footer.png";
-    $element['#title'] = preg_replace(
-      $pattern,
-      '<img alt = "' . $element['#localized_options']['attributes']['title'] . '" src = "' . url($footer_logo_path) . '" />',
-      $element['#title']
-    );
-    $element['#localized_options']['html'] = TRUE;
-  }
-
-  return theme_menu_link($variables);
-}
-
-/**
  * Find the about collection node for a given pid.
  *
  * @param string $pid
