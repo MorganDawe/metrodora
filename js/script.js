@@ -28,6 +28,7 @@ $(window).load(
         $('#edit-collection-select').val(Drupal.settings.metrotheme.search_in_pid);
       }
     }
+    $("#print_btn").parent().parent().hide();
   }
 );
 

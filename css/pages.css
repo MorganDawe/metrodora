@@ -15,17 +15,45 @@
   width: 100%;
 }
 
+#footer .footer-navigation .menu li:nth-child(3) a {
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("../images/icon/logo_footer.png");
+  background-origin: padding-box;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  height: 120px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  text-indent: -9999px;
+  width: 120px;
+}
+
 #header{
   padding-left: 0px;
   padding-right: 0px;
 }
 
+#print_btn{
+  display:none;
+}
+
+ul li a.img{
+  display:none;
+}
 #block-menu-menu-login .menu{
   margin-right: 1em;
   line-height: 1.25em;
   list-style: none outside none;
   margin: 0.75em 0;
   
+}
+.galleria-container{
+  margin: auto;
 }
 
 .browse-all-collections-item-wrapper a:link{
