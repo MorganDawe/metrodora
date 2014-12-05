@@ -39,7 +39,7 @@ function metro_theme_form_system_theme_settings_alter(&$form, &$form_state, $for
   // avoid the user thinking it can be used for any purpose.
   $form['footerbackground']['bg_path'] = array(
     '#type' => 'textfield',
-    '#title' => 'Path to background image',
+    '#title' => t('Path to background image'),
     '#default_value' => $bg_path,
     '#disabled' => TRUE,
   );
@@ -47,8 +47,8 @@ function metro_theme_form_system_theme_settings_alter(&$form, &$form_state, $for
   // Upload field.
   $form['footerbackground']['bg_upload'] = array(
     '#type' => 'file',
-    '#title' => 'Upload background image',
-    '#description' => 'Upload a new image for the background.',
+    '#title' => t('Upload background image'),
+    '#description' => t('Upload a new image for the background.'),
   );
 
   // Attach custom submit handler to the form.
