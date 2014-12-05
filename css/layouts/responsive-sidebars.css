@@ -265,44 +265,20 @@
   #edit-simple {
     text-align: center;
   }
+
   #block-islandora-collection-search-islandora-collection-search h2{
-    float: none !important;
-    width: 5.4em !important;
     margin-left: auto;
-    margin-right: auto !important;
-/*     border-bottom-style: none !important; */
   }
-  
-  #block-islandora-collection-search-islandora-collection-search{
-    float: none !important;
-    margin-left: 0 !important;
-  }
+
   #islandora-collection-search-form {
     margin-top: 10px;
   }
-/*   #block-islandora-collection-search-islandora-collection-search { */
-/*     text-align: center; */
-/*     margin-left: 0.7em !important; */
-/*   } */
-  
-/*   #footer .footer-navigation .menu li { */
-/*     display: table !important; */
-/*     text-align: left !important; */
-/*   } */
-  
 }
 
 @media all and (min-width: 320px) and (max-width: 639px) {
-  /* line 249, ../../sass/layouts/responsive-sidebars.scss */
-  #block-views-frontpage-solr-boxes-block-1 {
-    margin-bottom: 1em !important;
-  }
-
   /* line 252, ../../sass/layouts/responsive-sidebars.scss */
   .region-header {
     width: 100%;
-    float: left !important;
-    margin: 0 !important;
   }
   /* line 256, ../../sass/layouts/responsive-sidebars.scss */
   .region-header #block-menu-menu-header-menu {
@@ -310,14 +286,8 @@
   }
   /* line 259, ../../sass/layouts/responsive-sidebars.scss */
   .region-header #block-menu-menu-header-menu {
-    float: none !important;
     height: 4.5em;
     margin-top: 0;
-  }
-
-  /* line 265, ../../sass/layouts/responsive-sidebars.scss */
-  #logo {
-    margin-left: -0.5em !important;
   }
 
   /* line 268, ../../sass/layouts/responsive-sidebars.scss */

@@ -22,6 +22,15 @@
   overflow:hidden;
 }
 
+#name-and-slogan{
+  display: none;
+}
+
+#logo{
+  max-width: 600px;
+  height: auto;
+}
+
 #edit-collection-select{
   white-space: nowrap !important;
 }
@@ -233,10 +242,6 @@ dl.solr-thumb {
 /*
  * Header
  */
-/* line 91, ../sass/pages.scss */
-/* .logged-in.not-front #header { */
-/*   padding-top: 1.25em; */
-/* } */
 
 /* line 95, ../sass/pages.scss */
 #logo {

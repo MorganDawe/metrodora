@@ -1,5 +1,5 @@
 
-/* featured collections */
+/* featured collections/view specific styling*/
 .views-field.views-field-nothing {
   float:left;
   padding-right: 15px;
@@ -14,17 +14,6 @@
   max-width: 100px;
 }
 
-#name-and-slogan{
-  display: none;
-}
-
-#logo{
-  max-width: 600px;
-  height: auto;
-}
-
 .views-field.views-field-dctitle {
   padding-bottom: 15px;
 }
-
-/* header */
