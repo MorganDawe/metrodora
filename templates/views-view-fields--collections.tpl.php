@@ -42,7 +42,6 @@
     </div>
     <div class="browse-all-collections-links-wrapper">
       <div>
-      <?php print $fields[$collection_link_field]->content; ?>
       </div>
       <div>
       <?php print $fields[$about_collection_link_field]->content; ?>

@@ -312,19 +312,30 @@ function metro_theme_preprocess_views_view_fields(&$vars) {
       $node_id = $node->nid;
       $formatted_url = url("node/$node_id");
 
-      // Default label, playing it safe.
-      $label = t("This Collection");
-      if (isset($view->result[$view->row_index]->{$vars['label_field']})) {
-        $label = $view->result[$view->row_index]->{$vars['label_field']};
-      }
-      $formatted_label = "'" . $label . "'";
       $vars['fields'][$vars['about_collection_link_field']]->content
-        = '<span class="field-content"><a href="' . $formatted_url . '">About ' . $formatted_label . '</a></span>';
+        = '<span class="field-content"><a href="' . $formatted_url . '">' . t("About the Collection") . '</a></span>';
     }
     else {
       // Empty this field if the about collection page does not exist.
       $vars['fields'][$vars['about_collection_link_field']]->content = "";
     }
+  }
+}
+function metro_theme_block_view_alter(&$data, $block) {
+  switch ($block->delta) {
+    case 'menu-footer-menu':
+       foreach ($data['content'] as $key => $value) {
+         if (isset($data['content'][$key]['#title']) && $data['content'][$key]['#title'] === 'Logo') {
+           $path = theme_get_setting('bg_path');
+           if (variable_get('use_default_footer')) {
+             $path = drupal_get_path('theme', 'metro_theme') . "/images/icon/METRO_M-Only-Logo_2014_250x250.jpg";
+           }
+           $file_url = file_create_url($path);
+           $data['content'][$key]['#attributes']['style'] =
+             array("background-image: url($file_url);background-repeat: no-repeat;background-position: center;");
+         }
+       }
+       break;
   }
 }
 
@@ -355,6 +366,23 @@ function metro_theme_form_islandora_solr_simple_search_form_alter(&$form, &$form
     '#markup' => l(t("Advanced Search"), "advanced-search", array('attributes' => array('class' => array('adv_search')))),
   );
   $form['simple']['advanced_link'] = $link;
+}
+
+/**
+ * Replace instances of 'Islandora Repository' with 'All Collections'.
+ *
+ * @param array $breadcrumb
+ *   An indexed array of breadcrumbs.
+ */
+function metro_theme_breadcrumb($breadcrumb) {
+  if (isset($breadcrumb['breadcrumb']) && count($breadcrumb['breadcrumb']) > 0) {
+    foreach ($breadcrumb['breadcrumb'] as $key => $value) {
+      if (strpos($value, 'Islandora Repository') !== FALSE) {
+        $breadcrumb['breadcrumb'][$key] = "<a href='/islandora'>" . t("All Collections") . "</a>";
+      }
+    }
+    return implode(" › ", $breadcrumb['breadcrumb']);
+  }
 }
 
 /**

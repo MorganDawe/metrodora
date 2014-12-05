@@ -6,6 +6,30 @@
  * miscellaneous Drupal elements that appear in the $content variable, such as
  * ul.links, .pager, .more-link, etc.
  */
+ 
+/*  Textfield corrections */
+#edit-islandora-simple-search-query {
+  text-transform: none;
+}
+ 
+ .islandora-inline-metadata > dl {
+ width:100%;
+ overflow:hidden;
+
+}
+.galleria-info{
+  max-height: 30px;
+  overflow:hidden;
+}
+
+#edit-collection-select{
+  white-space: nowrap !important;
+}
+
+.islandora-inline-metadata dd {
+    padding-left: 60px !important;
+}
+
 .sub-header-style{
   background-color: #F2F2F2;
   clear: left;
@@ -15,22 +39,34 @@
   width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  #footer .responsive-menus .responsive-menus-simple .rm-removed li:nth-child(3){
+    background-image: none !important;
+  }
+}
+
 #footer .footer-navigation .menu li:nth-child(3) a {
   background-attachment: scroll;
   background-clip: border-box;
   background-color: rgba(0, 0, 0, 0);
-  background-image: url("../images/icon/logo_footer.png");
   background-origin: padding-box;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto auto;
-  height: 120px;
+  height: 80px;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
   text-indent: -9999px;
-  width: 120px;
+  width: 100%;
+}
+
+.browse-all-collections-item-wrapper {
+    border-bottom-color: #ddd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-bottom: 1.5em;
 }
 
 #header{
@@ -72,6 +108,7 @@ ul li a.img{
   max-width: 13%;
   height:auto;
   float: left;
+  width: 13%;
 }
 
 .browse-all-collections-content-wrapper{
@@ -81,7 +118,6 @@ ul li a.img{
 
 .browse-all-collections-info-description{
   height: 78%;
-  overflow: scroll;
 }
 .browse-all-collections-info-wrapper{
   height: 65%;
@@ -161,7 +197,9 @@ body {
   background-color: #666;
   color: #fff;
 }
-
+menu, ol, ul, .item-list ul {
+  padding-left: 0px !important;
+}
 /*
  * Searching
  */
@@ -196,14 +234,14 @@ dl.solr-thumb {
  * Header
  */
 /* line 91, ../sass/pages.scss */
-.logged-in.not-front #header {
-  padding-top: 1.25em;
-}
+/* .logged-in.not-front #header { */
+/*   padding-top: 1.25em; */
+/* } */
 
 /* line 95, ../sass/pages.scss */
 #logo {
-  /* Wrapping link for logo */
   float: left;
+  max-width: 100%;
   /* LTR */
   margin: 1.25em 0 1em;
   padding: 0;

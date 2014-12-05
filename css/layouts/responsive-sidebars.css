@@ -267,17 +267,28 @@
   }
   #block-islandora-collection-search-islandora-collection-search h2{
     float: none !important;
-    border-bottom-style: none !important;
-  }
-  #block-islandora-collection-search-islandora-collection-search {
-    text-align: center;
-    margin-left: 0.7em !important;
+    width: 5.4em !important;
+    margin-left: auto;
+    margin-right: auto !important;
+/*     border-bottom-style: none !important; */
   }
   
-  #footer .footer-navigation .menu li {
-    display: table !important;
-    text-align: left !important;
+  #block-islandora-collection-search-islandora-collection-search{
+    float: none !important;
+    margin-left: 0 !important;
   }
+  #islandora-collection-search-form {
+    margin-top: 10px;
+  }
+/*   #block-islandora-collection-search-islandora-collection-search { */
+/*     text-align: center; */
+/*     margin-left: 0.7em !important; */
+/*   } */
+  
+/*   #footer .footer-navigation .menu li { */
+/*     display: table !important; */
+/*     text-align: left !important; */
+/*   } */
   
 }
 

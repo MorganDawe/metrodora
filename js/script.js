@@ -6,20 +6,12 @@
  * the README.txt next to this file.
  */
 
-// JavaScript should be made compatible with libraries other than jQuery by
-// wrapping it with an "anonymous closure". See:
-// - http://drupal.org/node/1446420
-// - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 (function ($, Drupal, window, document, undefined) {
 
 $(window).load(
   function() {
-    $("#edit-islandora-simple-search-query").val("Search this repository");
-    $("#edit-islandora-simple-search-query").focus(function() {
-      $(this).val("");
-    });
-    // Set the 'SEARCH IN' combo box from islandora collection search
-    // when viewing an 'about_collection' page to the correct default value.
+    // Set focus of the Search Collections text box.
+    $('#edit-islandora-simple-search-query').focus();
     if (Drupal.settings.metrotheme) {
       // Multiple check on object/property, because javascript.
       if (Drupal.settings.metrotheme.search_in_pid) {
@@ -28,7 +20,25 @@ $(window).load(
         $('#edit-collection-select').val(Drupal.settings.metrotheme.search_in_pid);
       }
     }
-    $("#print_btn").parent().parent().hide();
+
+    // Jquery mouse over/out functions handled by 'hover'.
+    // Animation used in galleria description box.
+    $(".galleria-info").hover(
+      function() {
+        $( ".galleria-info" ).animate({
+          "max-height": "200px",
+        },
+        500
+        );
+      },
+      function() {
+        $( ".galleria-info" ).animate({
+          "max-height": "30px",
+        },
+        500
+        );
+      }
+    );
   }
 );
 

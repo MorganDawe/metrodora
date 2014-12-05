@@ -125,7 +125,7 @@
       <?php endif; ?>
 
       <?php if (isset($about_collection_link)): ?>
-        <a class="about-collection" href ="<?php print $about_collection_link; ?>"><?php print t('About'); ?> '<?php print $title; ?>'</a>
+        <a class="about-collection" href ="<?php print $about_collection_link; ?>"><?php print t('About the Collection'); ?></a>
       <?php endif; ?>
 
       <?php print render($title_suffix); ?>
