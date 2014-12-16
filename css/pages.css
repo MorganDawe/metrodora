@@ -36,14 +36,30 @@
   padding-left: 0;
 }
 
- .islandora-inline-metadata > dl {
+.islandora-inline-metadata > dl {
   width:100%;
   overflow:hidden;
 
 }
+
 .galleria-info{
   max-height: 30px;
   overflow:hidden;
+}
+
+.views-column {
+  min-height: 10em;
+}
+
+.views-responsive-grid .views-row {
+  float: left;
+}
+
+.featured-thumb {
+  max-height: 5em;
+  max-width: 5em;
+  min-height: 5em;
+  min-width: 5em;
 }
 
 #name-and-slogan{
