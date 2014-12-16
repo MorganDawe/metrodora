@@ -189,7 +189,7 @@ function metro_theme_preprocess_views_view_fields(&$vars) {
       $formatted_url = url("node/$node_id");
       $link_text = variable_get('moreinfobrowsecoltext', "More info about the collection");
       $vars['fields'][$vars['about_collection_link_field']]->content
-        = '<span class="field-content"><a href="' . $formatted_url . '">' . t($link_text) . '</a></span>';
+        = '<span class="field-content"><a href="' . $formatted_url . '">' . $link_text . '</a></span>';
     }
     else {
       // Empty this field if the about collection page does not exist.

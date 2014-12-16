@@ -51,7 +51,6 @@ function metro_theme_form_system_theme_settings_alter(&$form, &$form_state, $for
     '#description' => t('Upload a new image for the background.'),
   );
 
-
   // Container fieldset.
   $form['infolink'] = array(
     '#type' => 'fieldset',
@@ -64,15 +63,16 @@ function metro_theme_form_system_theme_settings_alter(&$form, &$form_state, $for
     '#type' => 'textfield',
     '#title' => t('Browse collection page about collection link text'),
     '#description' => t('Configure the about collection hyperlink text, as it appears on the browse collection page'),
-    '#default_value' => t(variable_get('moreinfobrowsecoltext', 'More info about collection')),
+    '#default_value' => variable_get('moreinfobrowsecoltext', 'More info about collection'),
   );
 
-  // Setting to configure the about collection link text on the collection page level
+  // Setting to configure the about collection link text,
+  // on the collection page level.
   $form['infolink']['moreinfocolleveltext'] = array(
     '#type' => 'textfield',
     '#title' => t('Collection page about collection link text'),
     '#description' => t('Configure the about collection hyperlink text, as it appears on the collection page'),
-    '#default_value' => t(variable_get('moreinfocolleveltext', 'More info about collection')),
+    '#default_value' => variable_get('moreinfocolleveltext', 'More info about collection'),
   );
 
   // Attach custom submit handler to the form.
