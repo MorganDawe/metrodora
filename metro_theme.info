@@ -48,6 +48,7 @@ base theme  = zen
 stylesheets[all][] = system.menus.css
 
 ; Then we add our own stylesheets.
+stylesheets[all][] = css/rss_csv_secondary_profile_buttons.css
 stylesheets[all][] = css/pre-region.css
 stylesheets[all][] = css/responsive.css
 stylesheets[all][] = css/metro_featured_collections.css

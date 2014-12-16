@@ -115,7 +115,10 @@
 
   <div id="main">
 
+  <div class="breadcrumb">
     <?php print $breadcrumb; ?>
+  </div>
+
     <div id="content" class="column" role="main">
       <?php print render($page['highlighted']); ?>
       <a id="main-content"></a>
@@ -125,7 +128,7 @@
       <?php endif; ?>
 
       <?php if (isset($about_collection_link)): ?>
-        <a class="about-collection" href ="<?php print $about_collection_link; ?>"><?php print t('About the Collection'); ?></a>
+      <a class="about-collection" href ="<?php print $about_collection_link; ?>"><?php print t('More info about the Collection'); ?></a>
       <?php endif; ?>
 
       <?php print render($title_suffix); ?>

@@ -58,6 +58,7 @@
   
   #edit-submit{
     margin-top: 0.5em !important;
+    margin-bottom: 0.5em;
   }
   #edit-collection-select {
     width: 80% !important;
@@ -67,15 +68,5 @@
   }
   .sub-header-style{
     margin-top: 0.5em;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .sidebars{
-    display:none;
-  }
-  .sidebar-first #content{
-    margin-left:0px !important;
-    width: 100% !important;
   }
 }

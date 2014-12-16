@@ -1,0 +1,14 @@
+
+#islandora-solr-top .item-list{
+  float:left;
+  margin-top: 0.8em;
+}
+
+.item-list ul#secondary-display-profiles li {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.secondary-display-csv {
+    max-width: 25px;
+}

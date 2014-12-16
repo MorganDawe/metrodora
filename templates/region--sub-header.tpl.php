@@ -8,22 +8,9 @@
  */
 ?>
 <?php if ($content): ?>
-
-  <div class="<?php print $classes; ?>">
-    <div id="pre_header_account_wrapper">
-      <?php print $content; ?>
-    <?php
-      if ($user->uid > 0) {
-        print "<form id='form-login' action=" . url('user/logout') . ">
-         <input type='submit' value='Logout'>
-       </form>";
-      }
-      else {
-        print "<form id='form-login' action=" . url('user') . ">
-         <input type='submit' value='Login'>
-       </form>";
-      }
-    ?>
+<div class="<?php print $classes; ?>">
+  <div id="pre_header_account_wrapper">
+    <?php print $content; ?>
   </div>
-  </div>
+</div>
 <?php endif; ?>

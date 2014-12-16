@@ -3,6 +3,7 @@
 .views-field.views-field-nothing {
   float:left;
   padding-right: 15px;
+  height: 5em;
 }
 
 .solr-featured-collections-view {
@@ -10,10 +11,14 @@
 }
 
 .featured-thumb {
-  height: auto;
-  max-width: 100px;
+  max-height: 5em;
+  max-width: 5em;
 }
 
 .views-field.views-field-dctitle {
   padding-bottom: 15px;
+}
+
+.views-field.views-field-dctitle {
+  padding-right: 10px;
 }

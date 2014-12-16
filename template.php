@@ -134,7 +134,7 @@ function metro_theme_preprocess_node(&$variables) {
 }
 
 /**
- * Override or insert variables into the page template.
+ * Override or insert variables into the template.
  *
  * Construct the "About '{COLLECTION_LABEL}'" url and
  * add it into the variables array as 'about_collection_link'.
@@ -145,7 +145,7 @@ function metro_theme_preprocess_node(&$variables) {
  * @param array $variables
  *   An array of variables to pass to the theme template.
  */
-function metro_theme_preprocess_page(&$variables) {
+function metro_theme_preprocess_islandora_basic_collection_wrapper(&$variables) {
   $object = menu_get_object('islandora_object', 2);
   if (isset($object) && in_array("islandora:collectionCModel", $object->models)) {
     $results = metro_theme_find_about_page_by_pid($object->id);
@@ -187,9 +187,9 @@ function metro_theme_preprocess_views_view_fields(&$vars) {
       $node = reset($nodes);
       $node_id = $node->nid;
       $formatted_url = url("node/$node_id");
-
+      $link_text = variable_get('moreinfobrowsecoltext', "More info about the collection");
       $vars['fields'][$vars['about_collection_link_field']]->content
-        = '<span class="field-content"><a href="' . $formatted_url . '">' . t("About the Collection") . '</a></span>';
+        = '<span class="field-content"><a href="' . $formatted_url . '">' . t($link_text) . '</a></span>';
     }
     else {
       // Empty this field if the about collection page does not exist.
@@ -207,17 +207,14 @@ function metro_theme_preprocess_views_view_fields(&$vars) {
 function metro_theme_block_view_alter(&$data, $block) {
   switch ($block->delta) {
     case 'menu-footer-menu':
-      foreach ($data['content'] as $key => $value) {
-        if (isset($data['content'][$key]['#title']) && $data['content'][$key]['#title'] === 'Logo') {
-          $path = theme_get_setting('bg_path');
-          if (variable_get('use_default_footer')) {
-            $path = drupal_get_path('theme', 'metro_theme') . "/images/icon/METRO_M-Only-Logo_2014_250x250.jpg";
-          }
-          $file_url = file_create_url($path);
-          $data['content'][$key]['#attributes']['style']
-            = array("background-image: url($file_url);background-repeat: no-repeat;background-position: center;");
-        }
+      $keys = array_keys($data['content']);
+      $path = theme_get_setting('bg_path');
+      if (variable_get('use_default_footer')) {
+        $path = drupal_get_path('theme', 'metro_theme') . "/images/icon/METRO_M-Only-Logo_2014_250x250.jpg";
       }
+      $file_url = file_create_url($path);
+      $data['content'][$keys[2]]['#attributes']['style']
+        = array("background-image: url($file_url);background-repeat: no-repeat;background-position: center;");
       break;
 
   }
@@ -268,6 +265,7 @@ function metro_theme_breadcrumb($breadcrumb) {
     return implode(" › ", $breadcrumb['breadcrumb']);
   }
 }
+
 
 /**
  * Implements hook_preprocess_html().

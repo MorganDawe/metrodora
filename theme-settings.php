@@ -51,6 +51,30 @@ function metro_theme_form_system_theme_settings_alter(&$form, &$form_state, $for
     '#description' => t('Upload a new image for the background.'),
   );
 
+
+  // Container fieldset.
+  $form['infolink'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('More info about collection text'),
+    '#description' => t('Configure the more info links that appears throughout this site.'),
+  );
+
+  // Setting to configure hyperlink text on the Browse collection page.
+  $form['infolink']['moreinfobrowsecoltext'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Browse collection page about collection link text'),
+    '#description' => t('Configure the about collection hyperlink text, as it appears on the browse collection page'),
+    '#default_value' => t(variable_get('moreinfobrowsecoltext', 'More info about collection')),
+  );
+
+  // Setting to configure the about collection link text on the collection page level
+  $form['infolink']['moreinfocolleveltext'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Collection page about collection link text'),
+    '#description' => t('Configure the about collection hyperlink text, as it appears on the collection page'),
+    '#default_value' => t(variable_get('moreinfocolleveltext', 'More info about collection')),
+  );
+
   // Attach custom submit handler to the form.
   $form['#submit'][] = 'metro_theme_settings_submit';
 
@@ -69,6 +93,8 @@ function metro_theme_settings_submit($form, &$form_state) {
   // Get the previous value.
   $previous = 'public://' . $form['footerbackground']['bg_path']['#default_value'];
   variable_set('use_default_footer', $form_state['values']['default_footer']);
+  variable_set('moreinfobrowsecoltext', $form_state['values']['moreinfobrowsecoltext']);
+  variable_set('moreinfocolleveltext', $form_state['values']['moreinfocolleveltext']);
   $file = file_save_upload('bg_upload');
   if ($file) {
     $parts = pathinfo($file->filename);

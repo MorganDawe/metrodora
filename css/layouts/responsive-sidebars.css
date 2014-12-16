@@ -70,7 +70,7 @@
     width: 100%;
   }
 }
-@media all and (min-width: 480px) and (max-width: 959px) {
+@media all and (min-width: 0px) and (max-width: 768px) {
   /*
    * Use 3 grid columns for smaller screens.
    */
@@ -81,9 +81,7 @@
   .sidebar-first #content {
     /* Span 2 columns, starting in 2nd column from left. */
     float: left;
-    width: 66.66667%;
-    margin-left: 33.33333%;
-    margin-right: -100%;
+    width: 100%;
   }
   /* line 107, ../../sass/layouts/responsive-sidebars.scss */
   .sidebar-first .region-sidebar-first {
@@ -93,7 +91,17 @@
     margin-left: 0%;
     margin-right: -33.33333%;
   }
+  .sidebar{
+    display:none;
+  }
 
+  .islandora-object-description-thumbnail {
+    float: none !important;
+    text-align: center !important;
+  }
+  .islandora-metadata {
+    float: left !important;
+  }
   /*
    * The layout when there is only one sidebar, the right one.
    */
@@ -103,18 +111,15 @@
     float: left;
     width: 66.66667%;
     margin-left: 0%;
-    margin-right: -66.66667%;
-    width: 73.333% !important;
+    margin-right: none;
+    width: 100% !important;
   }
   /* line 122, ../../sass/layouts/responsive-sidebars.scss */
   .sidebar-second .region-sidebar-second {
     /* Span 1 column, starting in 3rd column from left. */
     float: left;
-    width: 33.33333%;
-    margin-left: 66.66667%;
-    margin-right: -100%;
-    width: 25% !important;
-    margin-left: 68.28% !important;
+/*     width: 33.33333%; */
+/*     width: 25% !important; */
   }
 
   /*

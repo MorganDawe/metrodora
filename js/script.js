@@ -10,8 +10,6 @@
 
 $(window).load(
   function() {
-    // Set focus of the Search Collections text box.
-    $('#edit-islandora-simple-search-query').focus();
     if (Drupal.settings.metrotheme) {
       // Multiple check on object/property, because javascript.
       if (Drupal.settings.metrotheme.search_in_pid) {
@@ -26,7 +24,7 @@ $(window).load(
     $(".galleria-info").hover(
       function() {
         $( ".galleria-info" ).animate({
-          "max-height": "200px",
+          "max-height": "100%",
         },
         500
         );
