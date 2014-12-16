@@ -127,10 +127,6 @@
         <h1 class="title" id="page-title"><?php print $title; ?></h1>
       <?php endif; ?>
 
-      <?php if (isset($about_collection_link)): ?>
-      <a class="about-collection" href ="<?php print $about_collection_link; ?>"><?php print t('More info about the Collection'); ?></a>
-      <?php endif; ?>
-
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
       <?php print render($tabs); ?>

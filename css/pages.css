@@ -7,11 +7,6 @@
  * ul.links, .pager, .more-link, etc.
  */
 
-.responsive-menus.responsified.responsive-toggled.absolute {
-/*     overflow: scroll; */
-/*     height: auto; */
-}
-
 #islandora-compound-sequence-position, #islandora-compound-previous-link, #islandora-compound-next-link {
   margin-bottom: 0 !important;
   height: 2.05em;
@@ -19,18 +14,18 @@
 
 .islandora-object-description-thumbnail
 {
-    margin-top: 1em;
-    float:right;
+  margin-top: 1em;
+  float:right;
 }
 
- .jwplayer{
- max-width: 100%;
+.jwplayer{
+   max-width: 100%;
  }
 .form-item.form-type-select.form-item-collections {
-    max-width: 100%;
+  max-width: 100%;
 }
 .form-item-collections > select {
-    max-width: 100%;
+  max-width: 100%;
 }
 /*  Textfield corrections */
 #edit-islandora-simple-search-query {
@@ -38,12 +33,12 @@
 }
  
 .item-list > ul {
-    padding-left: 0;
+  padding-left: 0;
 }
 
  .islandora-inline-metadata > dl {
- width:100%;
- overflow:hidden;
+  width:100%;
+  overflow:hidden;
 
 }
 .galleria-info{
@@ -65,7 +60,7 @@
 }
 
 .islandora-inline-metadata dd {
-    padding-left: 60px !important;
+  padding-left: 60px !important;
 }
 
 .sub-header-style{
@@ -104,10 +99,10 @@
 }
 
 .browse-all-collections-item-wrapper {
-    border-bottom-color: #ddd;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    padding-bottom: 1.5em;
+  border-bottom-color: #ddd;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding-bottom: 1.5em;
 }
 
 #header{
