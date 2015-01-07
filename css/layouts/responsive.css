@@ -79,6 +79,12 @@
   }
 }
 
+@media all and (max-width: 768px) {
+  .views-responsive-grid .views-column {
+    width: 100% !important;
+  }
+}
+
 /**
  * Use 3 grid columns for smaller screens.
  */

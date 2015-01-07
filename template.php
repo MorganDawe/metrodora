@@ -266,7 +266,6 @@ function metro_theme_breadcrumb($breadcrumb) {
   }
 }
 
-
 /**
  * Implements hook_preprocess_html().
  */
