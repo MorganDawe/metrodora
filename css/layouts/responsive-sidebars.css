@@ -88,13 +88,18 @@
     /* Span 1 column, starting in 1st column from left. */
     float: left;
     width: 33.33333%;
-    margin-left: 0%;
+    margin-left: 0% !important;
     margin-right: -33.33333%;
   }
   .sidebar{
     display:none;
   }
-
+  .sidebar-first #content {
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: auto;
+  }
   .islandora-object-description-thumbnail {
     float: none !important;
     text-align: center !important;
