@@ -18,7 +18,7 @@ ul.secondary {
   border-bottom: 1px solid #bbbbbb;
   list-style: none;
   margin: 1em 0 1.5em;
-  padding: 0 2px;
+  padding:0 0 0 30px;
   white-space: nowrap;
 }
 /* line 31, ../sass/tabs.scss */
