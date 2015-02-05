@@ -7,6 +7,10 @@
  * ul.links, .pager, .more-link, etc.
  */
 
+#islandora-bookmark ul{
+  margin-left: 1.5em;
+}
+
 #islandora-compound-sequence-position, #islandora-compound-previous-link, #islandora-compound-next-link {
   margin-bottom: 0 !important;
   height: 2.05em;
